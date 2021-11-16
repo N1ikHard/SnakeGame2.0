@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SnakeGame2._0"
         mc:Ignorable="d"
-        Title="Snake 2.0" Height="450" Width="800" ResizeMode="NoResize">
-    <Canvas x:Name="MenuField" Background="AliceBlue">
-        <Grid x:Name="Menu"  Canvas.Left="50" Canvas.Top="140" Width="700" Height="250"  >
+        Title="Snake 2.0" Height="450" Width="800" ResizeMode="NoResize" KeyDown="Window_KeyDown">
+    <Canvas x:Name="CanvasMap" Background="AliceBlue">
+        <Grid x:Name="Menu"  Canvas.Left="50" Canvas.Top="30" Width="700" Height="390" >
             <Grid.RowDefinitions >
+                <RowDefinition Height="100"/>
                 <RowDefinition />
                 <RowDefinition/>
                 <RowDefinition/>
@@ -18,10 +19,10 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Row="0" Grid.Column="1" Content="Start" Canvas.Top="167" Canvas.Left="308" Click="Button_Click" Height="50" Width="184" FontSize="25" Background="AliceBlue" BorderThickness="0" />
-            <Button Grid.Row="1" Grid.Column="1" Content="Settings" Background="AliceBlue" Width="184" Height="50" FontSize="25" Canvas.Left="308" Canvas.Top="230" Click="Button_Click_1" BorderThickness="0"/>
-            <Button Grid.Row="2" Grid.Column="1" Content="Exit"  Background="AliceBlue" Width="184" Height="50" FontSize="25" Canvas.Left="308" Canvas.Top="310" BorderThickness="0"/>
-
+            <Button Grid.Row="1" Grid.Column="1" Content="Start" Canvas.Top="167" Canvas.Left="308" Click="Button_Click" Height="50" Width="184" FontSize="25" Background="AliceBlue" BorderThickness="0" />
+            <Button Grid.Row="2" Grid.Column="1" Content="Settings" Background="AliceBlue" Width="184" Height="50" FontSize="25" Canvas.Left="308" Canvas.Top="230" Click="Button_Click_1" BorderThickness="0"/>
+            <Button x:Name="ButtonExit" Grid.Row="3" Grid.Column="1" Content="Exit"  Background="AliceBlue" Width="184" Height="50" FontSize="25" Canvas.Left="308" Canvas.Top="310" BorderThickness="0" Click="ButtonExit_Click"/>
+            <TextBlock Text="      SnakeGame 2.0" Grid.Column="0" Grid.ColumnSpan="3"  FontFamily="TimesNewRoman" Background="AliceBlue" Foreground="Green" FontSize="70" Canvas.Left="163" Canvas.Top="31"/>
         </Grid>
         <Grid x:Name="Settings"  Canvas.Left="50" Canvas.Top="140" Width="700" Height="284" Visibility="Hidden">
             <Grid.RowDefinitions >
@@ -31,7 +32,7 @@
                 <RowDefinition/>
                 <RowDefinition />
                 <RowDefinition/>
-               
+
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -45,10 +46,23 @@
             <Button x:Name="ButtonGrow" Content="Grow" FontSize="22"   Grid.Column="0" Grid.Row="4" Background="AliceBlue" BorderThickness="0" MouseEnter="ButtonGrow_MouseEnter"/>
             <Button x:Name="ButtonBack" Content="Back" FontSize="22"   Grid.Column="0" Grid.Row="5" Background="AliceBlue" BorderThickness="0" Click="ButtonBack_Click"/>
             <TextBlock x:Name="Discription" Grid.Column="2" Grid.Row="0" Grid.RowSpan="6" TextWrapping="Wrap" FontSize="20"/>
-
-
         </Grid>
-        <TextBlock Text="SnakeGame 2.0" FontFamily="TimesNewRoman" Background="AliceBlue" Foreground="Green" FontSize="70" Canvas.Left="163" Canvas.Top="31"/>
+      
+            <Rectangle x:Name="Frame1" Fill="Lavender" Canvas.Left="0" Canvas.Top="0" Width="100" Height="434" />
+            <Rectangle x:Name="Frame2" Fill="Lavender" Canvas.Left="700" Canvas.Top="0" Width="100" Height="434"/>
+            <Rectangle x:Name="Frame3" Fill="Lavender" Canvas.Left="0" Canvas.Top="0" Width="800" Height="30"/>
+            <Rectangle x:Name="Frame4" Fill="Lavender" Canvas.Left="0" Canvas.Top="420" Width="800" Height="30"/>
+            <Line x:Name="Border1" Stroke="Black" StrokeThickness="2" X1="100" X2="100" Y1="30" Y2="420"/>
+            <Line x:Name="Border2" Stroke="Black" StrokeThickness="2" X1="700" X2="700" Y1="30" Y2="420"/>
+            <Line x:Name="Border3" Stroke="Black" StrokeThickness="2" X1="100" X2="700" Y1="30" Y2="30"/>
+            <Line x:Name="Border4" Stroke="Black" StrokeThickness="2" X1="100" X2="700" Y1="420" Y2="420"/>
+            <local:Food x:Name="Pointss1"  Canvas.Left="706" Canvas.Top="36" RenderTransformOrigin="0.48,1.812"  />
+
+            <Image x:Name="Heart" Source="Resources/Heart.png" Canvas.Top="68" Canvas.Left="706" Width="20" Height="20" Panel.ZIndex="0"  />
+            <TextBlock x:Name="HeartScore" Canvas.Left="728" Canvas.Top="70" Background="Lavender" FontSize="16" />
+
+            <TextBlock x:Name="Pause" Text="PAUSE" Canvas.Left="330" Canvas.Top="200" FontSize="50" Foreground="LightSteelBlue" Visibility="Hidden" Panel.ZIndex="0"/>
+            <TextBlock x:Name="Points"  Canvas.Left="728" Canvas.Top="35" Background="Lavender" FontSize="16"/>
     </Canvas>
-   
+
 </Window>

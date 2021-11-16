@@ -34,9 +34,9 @@ namespace SnakeGame2._0
         int MovePointY;
         int GrowIndex;
         Random rnd;
-        GameField field;
+        MainWindow field;
         public Point FoodPoint { get; protected set;}
-        public GameMechanick(GameField gameField)
+        public GameMechanick(MainWindow gameField)
         {
             field = gameField;
             InitParametrs();
