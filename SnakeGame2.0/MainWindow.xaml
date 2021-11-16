@@ -1,0 +1,54 @@
+﻿<Window x:Class="SnakeGame2._0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SnakeGame2._0"
+        mc:Ignorable="d"
+        Title="Snake 2.0" Height="450" Width="800" ResizeMode="NoResize">
+    <Canvas x:Name="MenuField" Background="AliceBlue">
+        <Grid x:Name="Menu"  Canvas.Left="50" Canvas.Top="140" Width="700" Height="250"  >
+            <Grid.RowDefinitions >
+                <RowDefinition />
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0" Grid.Column="1" Content="Start" Canvas.Top="167" Canvas.Left="308" Click="Button_Click" Height="50" Width="184" FontSize="25" Background="AliceBlue" BorderThickness="0" />
+            <Button Grid.Row="1" Grid.Column="1" Content="Settings" Background="AliceBlue" Width="184" Height="50" FontSize="25" Canvas.Left="308" Canvas.Top="230" Click="Button_Click_1" BorderThickness="0"/>
+            <Button Grid.Row="2" Grid.Column="1" Content="Exit"  Background="AliceBlue" Width="184" Height="50" FontSize="25" Canvas.Left="308" Canvas.Top="310" BorderThickness="0"/>
+
+        </Grid>
+        <Grid x:Name="Settings"  Canvas.Left="50" Canvas.Top="140" Width="700" Height="284" Visibility="Hidden">
+            <Grid.RowDefinitions >
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition />
+                <RowDefinition/>
+               
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="ButtonWall" Content="Wall" FontSize="22"   Grid.Column="0" Grid.Row="0" Background="AliceBlue" BorderThickness="0" MouseEnter="ButtonWall_MouseEnter"/>
+            <Button x:Name="ButtonDamage" Content="Damage" FontSize="22"  Grid.Column="0" Grid.Row="1" Background="AliceBlue" BorderThickness="0" MouseEnter="ButtonDamage_MouseEnter" />
+            <Button x:Name="ButtonHealth" Content="Health" FontSize="22"   Grid.Column="0" Grid.Row="2" Background="AliceBlue" BorderThickness="0" MouseEnter="ButtonHealth_MouseEnter"/>
+            <Button x:Name="ButtonBlock" Content="Block" FontSize="22"   Grid.Column="0" Grid.Row="3" Background="AliceBlue" BorderThickness="0" MouseEnter="ButtonBlock_MouseEnter"/>
+            <Button x:Name="ButtonGrow" Content="Grow" FontSize="22"   Grid.Column="0" Grid.Row="4" Background="AliceBlue" BorderThickness="0" MouseEnter="ButtonGrow_MouseEnter"/>
+            <Button x:Name="ButtonBack" Content="Back" FontSize="22"   Grid.Column="0" Grid.Row="5" Background="AliceBlue" BorderThickness="0" Click="ButtonBack_Click"/>
+            <TextBlock x:Name="Discription" Grid.Column="2" Grid.Row="0" Grid.RowSpan="6" TextWrapping="Wrap" FontSize="20"/>
+
+
+        </Grid>
+        <TextBlock Text="SnakeGame 2.0" FontFamily="TimesNewRoman" Background="AliceBlue" Foreground="Green" FontSize="70" Canvas.Left="163" Canvas.Top="31"/>
+    </Canvas>
+   
+</Window>
